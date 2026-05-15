@@ -1,5 +1,13 @@
 :80
 
 root * /usr/share/caddy
-file_server
 encode gzip
+
+header /index.html {
+  Cache-Control "no-cache, must-revalidate"
+}
+header / {
+  Cache-Control "no-cache, must-revalidate"
+}
+
+file_server
