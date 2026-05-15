@@ -1,13 +1,15 @@
+networks:
+  edge_net:
+    external: true
+    name: tienda3d_edge_net
+
 services:
-  web:
+  orset_web:
     build: .
+    container_name: orset_web
     restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
-    environment:
-      - SITE_ADDRESS=${SITE_ADDRESS:-localhost:80}
+    networks:
+      - edge_net
     volumes:
       - caddy_data:/data
       - caddy_config:/config
