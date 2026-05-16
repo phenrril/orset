@@ -5,9 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>orset. — Automatización para negocios reales</title>
 <meta name="description" content="Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios. WhatsApp, formularios, cobros, turnos y procesos en automático." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://orset.ar" />
+<meta property="og:title" content="orset. — Automatización para negocios reales" />
+<meta property="og:description" content="Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios. WhatsApp, formularios, cobros, turnos y procesos en automático." />
+<meta property="og:image" content="https://orset.ar/og-image.png" />
+<meta property="og:locale" content="es_AR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="orset. — Automatización para negocios reales" />
+<meta name="twitter:description" content="Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios. WhatsApp, formularios, cobros, turnos y procesos en automático." />
+<meta name="twitter:image" content="https://orset.ar/og-image.png" />
+<!-- TODO: generar og-image.png 1200x630, fondo #0E0F12, "orset." en coral grande, frase corta debajo en crema -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E0F12'/%3E%3Ctext x='17' y='43' font-family='Inter,Arial,sans-serif' font-size='34' font-weight='700' fill='%23F4EDE2'%3Eo%3C/text%3E%3Ccircle cx='46' cy='44' r='4' fill='%23FF6842'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "orset.",
+  "description": "Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios.",
+  "url": "https://orset.ar",
+  "telephone": "+5493416620117",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rosario",
+    "addressRegion": "Santa Fe",
+    "addressCountry": "AR"
+  },
+  "areaServed": ["AR", "LATAM"],
+  "priceRange": "$$"
+}
+</script>
 <style>
 :root{
   --bg:#0E0F12;
@@ -15,7 +45,7 @@
   --bg-3:#1A1B20;
   --cream:#F4EDE2;
   --cream-dim:#D6CFC4;
-  --mute:#9B9B9B;
+  --mute:#A8A8A8;
   --line:rgba(244,237,226,0.10);
   --line-strong:rgba(244,237,226,0.18);
   --coral:#FF6842;
@@ -24,10 +54,10 @@
   --serif:'Instrument Serif', Georgia, serif;
   --body:'Inter', ui-sans-serif, system-ui, sans-serif;
   --max:1280px;
-  --pad: clamp(20px, 5vw, 56px);
+  --pad:clamp(20px, 5vw, 56px);
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--cream);width:100%;max-width:100%;overflow-x:hidden;}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--cream);width:100%;max-width:100%;overflow-x:hidden}
 html{scroll-behavior:smooth}
 body{
   font-family:var(--body);
@@ -40,6 +70,31 @@ body{
 ::selection{background:var(--coral);color:#0E0F12}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+summary{cursor:pointer}
+
+/* ============ Accessibility ============ */
+.skip-link{
+  position:absolute;
+  left:16px;
+  top:-80px;
+  z-index:120;
+  padding:14px 18px;
+  border-radius:14px;
+  background:var(--coral);
+  color:#0E0F12;
+  font-family:var(--sans);
+  font-weight:600;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:16px}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+.solution-item:focus-visible{
+  outline:2px solid var(--coral);
+  outline-offset:3px;
+}
 
 /* ============ Layout primitives ============ */
 .wrap{
@@ -49,11 +104,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   padding-left:var(--pad);
   padding-right:var(--pad);
 }
-section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px);position:relative}
+section{padding-top:clamp(48px,11vw,160px);padding-bottom:clamp(48px,11vw,160px);position:relative}
 .eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   font-family:var(--body);
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
   color:var(--mute);
 }
 .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);box-shadow:0 0 14px var(--coral)}
@@ -77,9 +136,16 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 
 /* ============ Nav ============ */
 .nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
   padding:18px var(--pad);
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
   transition:background .35s ease, backdrop-filter .35s ease, border-color .35s ease, padding .35s ease;
   border-bottom:1px solid transparent;
 }
@@ -88,35 +154,54 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   backdrop-filter:blur(14px) saturate(120%);
   -webkit-backdrop-filter:blur(14px) saturate(120%);
   border-bottom-color:var(--line);
-  padding-top:12px;padding-bottom:12px;
+  padding-top:12px;
+  padding-bottom:12px;
 }
 .logo{
   font-family:var(--sans);
   font-weight:700;
   font-size:22px;
   letter-spacing:-.02em;
-  display:inline-flex;align-items:baseline;
+  display:inline-flex;
+  align-items:baseline;
 }
 .logo .pt{color:var(--coral)}
 .nav-meta{
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);
-  text-align:right;line-height:1.5;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--mute);
+  text-align:right;
+  line-height:1.5;
 }
 .nav-meta b{display:block;color:var(--cream);font-weight:500;letter-spacing:.22em}
 .nav-cta{
-  display:none;
-  align-items:center;gap:8px;
-  padding:10px 16px;border:1px solid var(--line-strong);border-radius:999px;
-  font-size:12px;letter-spacing:.06em;color:var(--cream);
-  transition:background .25s ease, border-color .25s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.06em;
+  color:var(--cream);
+  transition:background .25s ease, border-color .25s ease, color .25s ease;
+  white-space:nowrap;
 }
 .nav-cta:hover{background:var(--coral);border-color:var(--coral);color:#0E0F12}
+.nav-cta .short{display:none}
 @media(min-width:760px){
-  .nav-cta{display:inline-flex}
   .nav-meta{display:block}
 }
 @media(max-width:759px){
   .nav-meta{font-size:10px}
+  .nav-cta{
+    padding:9px 12px;
+    font-size:11px;
+    letter-spacing:.04em;
+  }
+  .nav-cta .full{display:none}
+  .nav-cta .short{display:inline}
 }
 @media(max-width:520px){
   .nav{padding:14px var(--pad)}
@@ -132,7 +217,13 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   position:relative;
 }
 .hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:var(--line);
 }
 .hero-eyebrow{margin-bottom:clamp(40px,7vw,80px)}
 .hero h1{
@@ -144,9 +235,7 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   margin:0 0 clamp(24px,4vw,44px);
   text-wrap:balance;
   color:var(--cream);
-  word-break:break-word;
-  overflow-wrap:break-word;
-  hyphens:auto;
+  overflow-wrap:normal;
 }
 .hero h1 .row{display:block}
 .hero h1 .italic{
@@ -164,20 +253,28 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   text-wrap:pretty;
 }
 .hero-actions{
-  display:flex;flex-wrap:wrap;gap:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
   margin-bottom:clamp(40px,5vw,60px);
 }
 .btn{
-  display:inline-flex;align-items:center;gap:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   padding:16px 24px;
   border-radius:999px;
-  font-family:var(--body);font-size:15px;font-weight:500;letter-spacing:-.005em;
+  font-family:var(--body);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:-.005em;
   border:1px solid transparent;
   transition:transform .25s cubic-bezier(.2,.65,.2,1), background .25s ease, border-color .25s ease, color .25s ease;
   white-space:nowrap;
 }
 .btn .arrow{
-  display:inline-block;transition:transform .35s cubic-bezier(.2,.65,.2,1);
+  display:inline-block;
+  transition:transform .35s cubic-bezier(.2,.65,.2,1);
 }
 .btn:hover .arrow{transform:translateX(4px)}
 .btn-primary{background:var(--coral);color:#0E0F12}
@@ -192,12 +289,20 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 }
 
 .hero-whatsapp{
-  display:inline-flex;align-items:center;gap:14px;
-  font-size:14px;color:var(--mute);
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  font-size:14px;
+  color:var(--mute);
 }
-.hero-whatsapp .wa-icon{
-  width:36px;height:36px;border-radius:50%;background:var(--coral);
-  display:inline-flex;align-items:center;justify-content:center;
+.wa-icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--coral);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   color:#0E0F12;
   flex-shrink:0;
 }
@@ -206,23 +311,35 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 
 /* Hero side meta */
 .hero-grid{
-  display:grid;gap:clamp(48px,6vw,80px);
+  display:grid;
+  gap:clamp(48px,6vw,80px);
   grid-template-columns:1fr;
 }
 @media(min-width:1020px){
   .hero-grid{grid-template-columns:1fr 280px;align-items:end}
 }
 .hero-meta{
-  display:flex;flex-direction:column;gap:18px;
-  font-size:13px;color:var(--mute);line-height:1.6;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  font-size:13px;
+  color:var(--mute);
+  line-height:1.6;
 }
-.hero-meta .row{display:flex;justify-content:space-between;gap:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.hero-meta .row{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+}
 .hero-meta .row b{color:var(--cream);font-weight:500}
 .hero-meta .row:last-child{border-bottom:0}
 
 /* ============ Section heading ============ */
 .section-head{
-  display:grid;gap:24px;
+  display:grid;
+  gap:24px;
   margin-bottom:clamp(48px,6vw,80px);
 }
 .section-head h2{
@@ -234,7 +351,6 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   margin:0;
   color:var(--cream);
   text-wrap:balance;
-  word-break:break-word;
   overflow-wrap:break-word;
 }
 .section-head .lede{
@@ -250,12 +366,16 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 }
 .section-num{
   font-family:var(--body);
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--mute);
 }
 
 /* ============ Problem cards ============ */
 .problem-grid{
-  display:grid;gap:1px;
+  display:grid;
+  gap:1px;
   background:var(--line);
   border:1px solid var(--line);
   border-radius:20px;
@@ -266,7 +386,9 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 .problem-card{
   background:var(--bg);
   padding:28px 24px 32px;
-  display:flex;flex-direction:column;gap:14px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
   min-height:180px;
   transition:background .3s ease;
   position:relative;
@@ -274,21 +396,31 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 .problem-card:hover{background:var(--bg-2)}
 .problem-card .ix{
   font-family:var(--body);
-  font-size:11px;letter-spacing:.2em;color:var(--mute);
+  font-size:11px;
+  letter-spacing:.2em;
+  color:var(--mute);
 }
 .problem-card .lbl{
-  font-family:var(--sans);font-weight:600;font-size:clamp(18px,2vw,22px);
-  letter-spacing:-.01em;line-height:1.2;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:clamp(18px,2vw,22px);
+  letter-spacing:-.01em;
+  line-height:1.2;
   color:var(--cream);
 }
 .problem-card .dot{
-  width:6px;height:6px;border-radius:50%;background:var(--coral);
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--coral);
   margin-top:auto;
 }
 
 /* ============ Solution list ============ */
 .solution-list{
-  list-style:none;padding:0;margin:0;
+  list-style:none;
+  padding:0;
+  margin:0;
   border-top:1px solid var(--line);
 }
 .solution-item{
@@ -300,24 +432,39 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   border-bottom:1px solid var(--line);
   transition:padding .25s ease;
 }
-.solution-item:hover{padding-left:8px}
+.solution-item:hover,
+.solution-item:focus-visible{padding-left:8px}
 .solution-item .si-num{
-  font-family:var(--body);font-size:12px;letter-spacing:.18em;color:var(--coral);
+  font-family:var(--body);
+  font-size:12px;
+  letter-spacing:.18em;
+  color:var(--coral);
   padding-top:6px;
 }
 .solution-item .si-title{
-  font-family:var(--sans);font-weight:600;font-size:clamp(20px,2.4vw,30px);
-  letter-spacing:-.02em;line-height:1.2;color:var(--cream);
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:clamp(20px,2.4vw,30px);
+  letter-spacing:-.02em;
+  line-height:1.2;
+  color:var(--cream);
   margin:0 0 8px;
 }
 .solution-item .si-desc{
-  font-size:15px;color:var(--mute);line-height:1.55;max-width:560px;margin:0;
+  font-size:15px;
+  color:var(--mute);
+  line-height:1.55;
+  max-width:560px;
+  margin:0;
 }
 .solution-item .si-arrow{
-  color:var(--mute);font-size:18px;padding-top:6px;
+  color:var(--mute);
+  font-size:18px;
+  padding-top:6px;
   transition:transform .35s cubic-bezier(.2,.65,.2,1), color .25s ease;
 }
-.solution-item:hover .si-arrow{color:var(--coral);transform:translateX(4px)}
+.solution-item:hover .si-arrow,
+.solution-item:focus-visible .si-arrow{color:var(--coral);transform:translateX(4px)}
 @media(max-width:640px){
   .solution-item{grid-template-columns:42px 1fr;gap:14px;padding:24px 0}
   .solution-item .si-arrow{display:none}
@@ -325,7 +472,8 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 
 /* ============ How (4 steps) ============ */
 .steps{
-  display:grid;gap:1px;
+  display:grid;
+  gap:1px;
   background:var(--line);
   border:1px solid var(--line);
   border-radius:20px;
@@ -338,26 +486,40 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   background:var(--bg);
   padding:32px 28px;
   min-height:240px;
-  display:flex;flex-direction:column;gap:18px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
   position:relative;
   transition:background .3s ease;
 }
 .step:hover{background:var(--bg-2)}
 .step .num{
-  font-family:var(--sans);font-weight:700;font-size:42px;letter-spacing:-.02em;
-  color:var(--coral);line-height:1;
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:42px;
+  letter-spacing:-.02em;
+  color:var(--coral);
+  line-height:1;
 }
 .step h3{
-  font-family:var(--sans);font-weight:600;font-size:22px;letter-spacing:-.015em;
-  margin:0;color:var(--cream);
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:22px;
+  letter-spacing:-.015em;
+  margin:0;
+  color:var(--cream);
 }
 .step p{
-  margin:0;font-size:15px;color:var(--cream-dim);line-height:1.55;
+  margin:0;
+  font-size:15px;
+  color:var(--cream-dim);
+  line-height:1.55;
 }
 
-/* ============ Examples cards (auto-marquee + grid) ============ */
+/* ============ Examples cards ============ */
 .examples-grid{
-  display:grid;gap:16px;
+  display:grid;
+  gap:16px;
   grid-template-columns:repeat(1,1fr);
 }
 @media(min-width:680px){.examples-grid{grid-template-columns:repeat(2,1fr)}}
@@ -367,10 +529,13 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   border:1px solid var(--line);
   border-radius:18px;
   padding:24px;
-  min-height:220px;
-  display:flex;flex-direction:column;gap:14px;
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
   transition:border-color .3s ease, transform .3s ease, background .3s ease;
-  position:relative;overflow:hidden;
+  position:relative;
+  overflow:hidden;
 }
 .example-card:hover{
   border-color:var(--coral);
@@ -378,25 +543,47 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   background:var(--bg-3);
 }
 .example-card .ex-tag{
-  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--coral);
 }
 .example-card h4{
-  font-family:var(--sans);font-weight:600;font-size:19px;letter-spacing:-.01em;
-  margin:0;line-height:1.25;color:var(--cream);
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:19px;
+  letter-spacing:-.01em;
+  margin:0;
+  line-height:1.25;
+  color:var(--cream);
 }
 .example-card p{
-  margin:0;font-size:14px;color:var(--mute);line-height:1.55;
+  margin:0;
+  font-size:14px;
+  color:var(--mute);
+  line-height:1.55;
+}
+.example-card .ex-result{
+  margin-top:auto;
+  font-family:var(--sans);
+  font-weight:600;
+  color:var(--cream);
+  letter-spacing:-.01em;
 }
 .example-card .glyph{
   margin-top:auto;
-  font-family:var(--serif);font-style:italic;font-size:42px;
-  color:rgba(244,237,226,0.08);line-height:1;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:32px;
+  color:rgba(244,237,226,0.06);
+  line-height:1;
   align-self:flex-end;
 }
 
 /* ============ Audience ============ */
 .audience-grid{
-  display:grid;gap:12px;
+  display:grid;
+  gap:12px;
   grid-template-columns:repeat(2,1fr);
 }
 @media(min-width:680px){.audience-grid{grid-template-columns:repeat(3,1fr)}}
@@ -405,20 +592,30 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   padding:18px 20px;
   border:1px solid var(--line);
   border-radius:14px;
-  font-family:var(--sans);font-weight:500;font-size:16px;letter-spacing:-.005em;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:16px;
+  letter-spacing:-.005em;
   color:var(--cream);
-  display:flex;align-items:center;gap:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
   transition:border-color .25s ease, background .25s ease;
 }
 .aud-chip:hover{border-color:var(--coral);background:var(--bg-2)}
 .aud-chip::before{
-  content:"";width:6px;height:6px;border-radius:50%;background:var(--coral);
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--coral);
   flex-shrink:0;
 }
 
 /* ============ Differential ============ */
 .diff-body{
-  display:grid;gap:48px;
+  display:grid;
+  gap:48px;
   grid-template-columns:1fr;
 }
 @media(min-width:980px){.diff-body{grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}}
@@ -430,20 +627,204 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   text-wrap:pretty;
 }
 .diff-points{
-  list-style:none;padding:0;margin:0;
-  display:grid;gap:0;
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:0;
 }
 .diff-point{
-  display:flex;gap:18px;align-items:baseline;
+  display:flex;
+  gap:18px;
+  align-items:baseline;
   padding:18px 0;
   border-bottom:1px solid var(--line);
-  font-family:var(--sans);font-weight:500;font-size:18px;letter-spacing:-.01em;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:-.01em;
   color:var(--cream);
 }
 .diff-point:last-child{border-bottom:0}
 .diff-point .ix{
-  font-family:var(--body);font-size:11px;letter-spacing:.18em;color:var(--coral);
+  font-family:var(--body);
+  font-size:11px;
+  letter-spacing:.18em;
+  color:var(--coral);
   min-width:32px;
+}
+
+/* ============ About ============ */
+.about-grid{
+  display:grid;
+  gap:32px;
+  grid-template-columns:1fr;
+  align-items:start;
+}
+@media(min-width:860px){
+  .about-grid{grid-template-columns:160px 1fr}
+}
+.about-photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:1px solid var(--line-strong);
+  background:var(--bg-2);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--sans);
+  font-size:22px;
+  font-weight:600;
+  color:var(--cream-dim);
+}
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.about-copy{
+  display:grid;
+  gap:18px;
+  max-width:720px;
+}
+.about-role{
+  display:grid;
+  gap:6px;
+}
+.about-role h3{
+  margin:0;
+  font-family:var(--sans);
+  font-size:clamp(24px,3vw,34px);
+  letter-spacing:-.02em;
+}
+.about-role p,
+.about-copy p{
+  margin:0;
+  color:var(--cream-dim);
+  font-size:16px;
+}
+.about-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.about-links a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  transition:border-color .25s ease, background .25s ease;
+}
+.about-links a:hover{border-color:var(--coral);background:var(--bg-2)}
+
+/* ============ Pricing ============ */
+.pricing-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:1fr;
+}
+@media(min-width:820px){
+  .pricing-grid{grid-template-columns:repeat(3,1fr)}
+}
+.pricing-card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  background:var(--bg-2);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  min-height:260px;
+}
+.pricing-card.recommended{
+  border-color:var(--coral);
+  background:var(--bg-3);
+}
+.pricing-badge{
+  align-self:flex-start;
+  padding:7px 10px;
+  border-radius:999px;
+  background:var(--coral-soft);
+  color:var(--coral);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.pricing-card h3{
+  margin:0;
+  font-family:var(--sans);
+  font-size:28px;
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.pricing-price{
+  font-family:var(--sans);
+  font-size:18px;
+  font-weight:600;
+  color:var(--cream);
+}
+.pricing-card p,
+.pricing-card li{
+  color:var(--cream-dim);
+}
+.pricing-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.pricing-list li{
+  display:flex;
+  gap:10px;
+}
+.pricing-list li::before{
+  content:"";
+  width:6px;
+  height:6px;
+  margin-top:10px;
+  border-radius:50%;
+  background:var(--coral);
+  flex-shrink:0;
+}
+
+/* ============ FAQ ============ */
+.faq-list{
+  border-top:1px solid var(--line);
+}
+.faq-item{
+  border-bottom:1px solid var(--line);
+}
+.faq-item summary{
+  list-style:none;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  padding:26px 0;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:clamp(18px,2vw,24px);
+  letter-spacing:-.01em;
+  color:var(--cream);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--coral)}
+.faq-item .faq-chevron{
+  flex-shrink:0;
+  color:var(--coral);
+  transition:transform .25s ease;
+}
+.faq-item[open] .faq-chevron{transform:rotate(45deg)}
+.faq-answer{
+  padding:0 0 26px;
+  max-width:720px;
+  color:var(--cream-dim);
 }
 
 /* ============ Final CTA + Form ============ */
@@ -452,7 +833,8 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   border-radius:24px;
   padding:clamp(24px,5vw,72px);
   background:linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
-  position:relative;overflow:hidden;
+  position:relative;
+  overflow:hidden;
 }
 @media(max-width:520px){
   .cta-actions{flex-direction:column;align-items:stretch}
@@ -460,24 +842,37 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
   .cta-left h2{font-size:clamp(28px,8vw,44px)}
 }
 .cta-block::before{
-  content:"";position:absolute;inset:-1px;
-  border-radius:24px;pointer-events:none;
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:24px;
+  pointer-events:none;
   background:radial-gradient(600px circle at 15% 0%, rgba(255,104,66,0.10), transparent 60%);
 }
 .cta-grid{
-  display:grid;gap:48px;
-  grid-template-columns:1fr;position:relative;
+  display:grid;
+  gap:48px;
+  grid-template-columns:1fr;
+  position:relative;
 }
 @media(min-width:980px){.cta-grid{grid-template-columns:1.05fr 1fr;gap:80px}}
 .cta-left h2{
-  font-family:var(--sans);font-weight:700;
+  font-family:var(--sans);
+  font-weight:700;
   font-size:clamp(34px,5.2vw,62px);
-  line-height:1;letter-spacing:-.03em;
-  margin:0 0 24px;color:var(--cream);text-wrap:balance;
+  line-height:1;
+  letter-spacing:-.03em;
+  margin:0 0 24px;
+  color:var(--cream);
+  text-wrap:balance;
 }
 .cta-left .ctxt{
-  font-size:clamp(16px,1.5vw,19px);color:var(--cream-dim);line-height:1.55;
-  max-width:480px;margin:0 0 36px;text-wrap:pretty;
+  font-size:clamp(16px,1.5vw,19px);
+  color:var(--cream-dim);
+  line-height:1.55;
+  max-width:480px;
+  margin:0 0 36px;
+  text-wrap:pretty;
 }
 .cta-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
 .cta-meta{display:flex;gap:24px;color:var(--mute);font-size:13px;flex-wrap:wrap}
@@ -488,43 +883,117 @@ section{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(64px,11vw,160px)
 .form{display:grid;gap:18px}
 .form-row{display:grid;gap:8px}
 .form-label{
-  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:500;
 }
-.form-input, .form-textarea{
+.form-input,
+.form-textarea{
   width:100%;
   background:transparent;
   border:0;
   border-bottom:1px solid var(--line-strong);
   padding:10px 0 12px;
-  font-family:var(--body);font-size:17px;color:var(--cream);
-  transition:border-color .25s ease;
-  outline:none;
+  font-family:var(--body);
+  font-size:17px;
+  color:var(--cream);
+  transition:border-color .25s ease, box-shadow .25s ease;
   resize:none;
 }
-.form-input::placeholder, .form-textarea::placeholder{color:rgba(155,155,155,0.55)}
-.form-input:focus, .form-textarea:focus{border-bottom-color:var(--coral)}
+.form-input::placeholder,
+.form-textarea::placeholder{color:rgba(168,168,168,0.55)}
+.form-input:focus,
+.form-textarea:focus{
+  border-bottom-color:var(--coral);
+  box-shadow:0 2px 0 0 var(--coral), 0 0 0 2px var(--coral-soft);
+}
+.form-input:focus-visible,
+.form-textarea:focus-visible{
+  outline:2px solid transparent;
+}
 .form-textarea{min-height:88px;line-height:1.5}
+.hidden-field{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
 .form-submit{
   margin-top:8px;
   padding:18px 26px;
-  background:var(--coral);color:#0E0F12;
+  background:var(--coral);
+  color:#0E0F12;
   border-radius:999px;
-  font-size:16px;font-weight:500;letter-spacing:-.005em;
-  display:inline-flex;align-items:center;gap:10px;justify-content:center;
-  transition:transform .25s ease, background .25s ease;
+  font-size:16px;
+  font-weight:500;
+  letter-spacing:-.005em;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+  transition:transform .25s ease, background .25s ease, opacity .25s ease;
 }
 .form-submit:hover{background:#FF7E5C;transform:translateY(-1px)}
-.form-success{
+.form-submit[disabled]{opacity:.7;cursor:wait}
+.form-status{
   display:none;
-  padding:18px 22px;border-radius:14px;
+  padding:18px 22px;
+  border-radius:14px;
+  font-size:15px;
+  line-height:1.5;
+}
+.form-status.show{display:block}
+.form-success{
   background:rgba(255,104,66,0.10);
   border:1px solid var(--coral);
-  color:var(--cream);font-size:15px;line-height:1.5;
+  color:var(--cream);
 }
-.form-success.show{display:block}
-.form-error{color:var(--coral);font-size:12px;margin-top:4px;display:none}
+.form-status-error{
+  background:rgba(255,104,66,0.10);
+  border:1px solid rgba(255,104,66,0.55);
+  color:var(--cream);
+}
+.form-error{
+  color:var(--coral);
+  font-size:12px;
+  margin-top:4px;
+  display:none;
+}
 .form-row.invalid .form-error{display:block}
-.form-row.invalid .form-input, .form-row.invalid .form-textarea{border-bottom-color:var(--coral)}
+.form-row.invalid .form-input,
+.form-row.invalid .form-textarea{border-bottom-color:var(--coral)}
+
+/* ============ Floating WhatsApp ============ */
+.mobile-wa{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:var(--coral);
+  color:#0E0F12;
+  box-shadow:0 10px 24px rgba(14,15,18,0.28);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transform:translateY(12px);
+  pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease;
+  z-index:45;
+}
+.mobile-wa.visible{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+@media(min-width:761px){
+  .mobile-wa{display:none}
+}
 
 /* ============ Footer ============ */
 footer{
@@ -532,15 +1001,22 @@ footer{
   border-top:1px solid var(--line);
   color:var(--mute);
   font-size:13px;
-  display:grid;gap:24px;
+  display:grid;
+  gap:24px;
 }
 @media(max-width:520px){
   .footer-inner{flex-direction:column;align-items:flex-start;gap:16px}
   .foot-links{gap:14px 20px}
 }
 .footer-inner{
-  max-width:var(--max);margin:0 auto;width:100%;
-  display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center;
+  max-width:var(--max);
+  margin:0 auto;
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
 }
 footer .logo{font-size:18px}
 .foot-links{display:flex;gap:24px;flex-wrap:wrap}
@@ -549,8 +1025,11 @@ footer .logo{font-size:18px}
 
 /* ============ Misc ============ */
 .scrim{
-  position:absolute;pointer-events:none;
-  width:min(600px,90vw);height:min(600px,90vw);border-radius:50%;
+  position:absolute;
+  pointer-events:none;
+  width:min(600px,90vw);
+  height:min(600px,90vw);
+  border-radius:50%;
   background:radial-gradient(circle, rgba(255,104,66,0.10) 0%, transparent 60%);
   filter:blur(40px);
   z-index:-1;
@@ -560,9 +1039,31 @@ footer .logo{font-size:18px}
 @media(max-width:520px){
   .scrim{display:none}
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > * {
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+  }
+  html { scroll-behavior:auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+  }
+  .mobile-wa{
+    transition:none !important;
+    transform:none !important;
+  }
+}
 </style>
 </head>
 <body>
+<a href="#top" class="skip-link">Saltar al contenido principal</a>
 
 <!-- ================== NAV ================== -->
 <nav class="nav" id="nav">
@@ -571,13 +1072,15 @@ footer .logo{font-size:18px}
     Automatización<br/>para PyMEs<br/><b>— AR</b>
   </div>
   <a href="#contacto" class="nav-cta">
-    Pedir diagnóstico
+    <span class="full">Pedir diagnóstico</span>
+    <span class="short">Contacto</span>
     <span class="arrow">→</span>
   </a>
 </nav>
 
+<main id="top">
 <!-- ================== HERO ================== -->
-<header class="hero" id="top">
+<header class="hero" aria-labelledby="hero-title">
   <span class="scrim" aria-hidden="true"></span>
   <div class="wrap">
     <div class="hero-eyebrow reveal">
@@ -586,8 +1089,8 @@ footer .logo{font-size:18px}
 
     <div class="hero-grid">
       <div>
-        <h1 class="reveal">
-          <span class="row">Tu negocio.</span>
+        <h1 class="reveal" id="hero-title">
+          <span class="row">Tu negocio</span>
           <span class="row">Trabajando <span class="italic">menos</span></span>
           <span class="row">en <span class="italic">automático</span><span class="accent-dot">.</span></span>
         </h1>
@@ -630,17 +1133,17 @@ footer .logo{font-size:18px}
 </header>
 
 <!-- ================== PROBLEMA ================== -->
-<section id="problema">
+<section id="problema" aria-labelledby="problema-title">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <div class="section-num">01 — El problema</div>
-        <h2>¿Cuántas horas <span class="italic">perdés</span><br/>haciendo lo mismo?</h2>
+        <h2 id="problema-title">¿Cuántas horas <span class="italic">perdés</span><br/>haciendo lo mismo?</h2>
       </div>
       <p class="lede">
         Responder mensajes, cargar pedidos, copiar datos, perseguir pagos,
         confirmar turnos, armar reportes. Todo eso consume tiempo que podrías
-        usar para vender, atender mejor o simplemente respirar un poco — que
+        usar para vender, atender mejor o simplemente respirar un poco, que
         aparentemente también hace falta.
       </p>
     </div>
@@ -657,12 +1160,12 @@ footer .logo{font-size:18px}
 </section>
 
 <!-- ================== SOLUCIÓN ================== -->
-<section id="soluciones">
+<section id="soluciones" aria-labelledby="soluciones-title">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <div class="section-num">02 — La solución</div>
-        <h2>Automatizaciones hechas<br/>para negocios <span class="italic">reales</span>.</h2>
+        <h2 id="soluciones-title">Automatizaciones hechas<br/>para negocios <span class="italic">reales</span>.</h2>
       </div>
       <p class="lede">
         Seis bloques que cubren casi todo lo que un negocio chico necesita
@@ -672,7 +1175,7 @@ footer .logo{font-size:18px}
     </div>
 
     <ul class="solution-list reveal-stagger">
-      <li class="solution-item">
+      <li class="solution-item" tabindex="0">
         <div class="si-num">01</div>
         <div>
           <h3 class="si-title">WhatsApp e Instagram que responden consultas frecuentes.</h3>
@@ -680,7 +1183,7 @@ footer .logo{font-size:18px}
         </div>
         <div class="si-arrow">→</div>
       </li>
-      <li class="solution-item">
+      <li class="solution-item" tabindex="0">
         <div class="si-num">02</div>
         <div>
           <h3 class="si-title">Formularios que cargan pedidos automáticamente.</h3>
@@ -688,7 +1191,7 @@ footer .logo{font-size:18px}
         </div>
         <div class="si-arrow">→</div>
       </li>
-      <li class="solution-item">
+      <li class="solution-item" tabindex="0">
         <div class="si-num">03</div>
         <div>
           <h3 class="si-title">Seguimiento automático de clientes y presupuestos.</h3>
@@ -696,7 +1199,7 @@ footer .logo{font-size:18px}
         </div>
         <div class="si-arrow">→</div>
       </li>
-      <li class="solution-item">
+      <li class="solution-item" tabindex="0">
         <div class="si-num">04</div>
         <div>
           <h3 class="si-title">Recordatorios de cobros, turnos y pagos.</h3>
@@ -704,15 +1207,15 @@ footer .logo{font-size:18px}
         </div>
         <div class="si-arrow">→</div>
       </li>
-      <li class="solution-item">
+      <li class="solution-item" tabindex="0">
         <div class="si-num">05</div>
         <div>
           <h3 class="si-title">Agentes que consultan datos y ayudan a operar.</h3>
-          <p class="si-desc">Asistentes internos que buscan información de clientes, productos o pedidos en lenguaje natural — para vos y tu equipo.</p>
+          <p class="si-desc">Asistentes internos que buscan información de clientes, productos o pedidos en lenguaje natural, para vos y tu equipo.</p>
         </div>
         <div class="si-arrow">→</div>
       </li>
-      <li class="solution-item">
+      <li class="solution-item" tabindex="0">
         <div class="si-num">06</div>
         <div>
           <h3 class="si-title">Reportes simples para entender qué pasa.</h3>
@@ -725,12 +1228,12 @@ footer .logo{font-size:18px}
 </section>
 
 <!-- ================== CÓMO TRABAJO ================== -->
-<section id="proceso">
+<section id="proceso" aria-labelledby="proceso-title">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <div class="section-num">03 — Cómo trabajo</div>
-        <h2>Cuatro pasos. Sin <span class="italic">vueltas</span>.</h2>
+        <h2 id="proceso-title">Cuatro pasos. Sin <span class="italic">vueltas</span>.</h2>
       </div>
       <p class="lede">
         Un proceso corto, transparente y conversado. No vendo software
@@ -757,19 +1260,19 @@ footer .logo{font-size:18px}
       <div class="step">
         <div class="num">04</div>
         <h3>Ajuste y mejora</h3>
-        <p>Probamos, medimos y corregimos para que realmente sirva — no para que quede lindo en una demo.</p>
+        <p>Probamos, medimos y corregimos para que realmente sirva, no para que quede lindo en una demo.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================== EJEMPLOS ================== -->
-<section id="ejemplos">
+<section id="ejemplos" aria-labelledby="ejemplos-title">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <div class="section-num">04 — Ejemplos</div>
-        <h2>Cosas concretas<br/>que <span class="italic">ya hice</span>.</h2>
+        <h2 id="ejemplos-title">Cosas concretas<br/>que <span class="italic">ya hice</span>.</h2>
       </div>
       <p class="lede">
         Algunos ejemplos reales de automatizaciones que terminan
@@ -779,33 +1282,37 @@ footer .logo{font-size:18px}
 
     <div class="examples-grid reveal-stagger">
       <article class="example-card">
-        <div class="ex-tag">WhatsApp · Bot</div>
-        <h4>Bot que responde consultas frecuentes 24/7.</h4>
-        <p>Precios, horarios, stock, ubicación. Deriva a humano cuando detecta una venta real.</p>
+        <div class="ex-tag">E-commerce · Carritos frenados</div>
+        <h4>Secuencia automática para recuperar ventas por WhatsApp.</h4>
+        <p><!-- TODO: completar caso real e-commerce --> Se detectó abandono de carrito, se disparó seguimiento con contexto de compra y derivación humana cuando había intención real.</p>
+        <p class="ex-result"><!-- TODO: agregar resultado real caso e-commerce --> Resultado: 00% más recupero de ventas.</p>
         <div class="glyph">a.</div>
       </article>
       <article class="example-card">
-        <div class="ex-tag">Pedidos</div>
-        <h4>De formulario a planilla, sin tocar nada.</h4>
-        <p>Captura, valida y carga pedidos en tu base. Etiqueta por origen y estado.</p>
+        <div class="ex-tag">Servicios · Consultas repetidas</div>
+        <h4>Bot de primera respuesta para filtrar, responder y ordenar leads.</h4>
+        <p><!-- TODO: completar caso real bot consultas --> Se automatizaron preguntas frecuentes, captura de datos y aviso interno cuando la charla pedía mano humana.</p>
+        <p class="ex-result"><!-- TODO: agregar resultado real bot consultas --> Resultado: 00h/semana ahorradas.</p>
         <div class="glyph">b.</div>
       </article>
       <article class="example-card">
-        <div class="ex-tag">Seguimiento</div>
-        <h4>Presupuestos que se acuerdan solos.</h4>
-        <p>Mensaje automático a los días si no hubo respuesta. Cierra hasta un 30% más.</p>
+        <div class="ex-tag">Estudio · Presupuestos colgados</div>
+        <h4>Seguimiento automático después de cada propuesta enviada.</h4>
+        <p><!-- TODO: completar caso real seguimiento --> Se armó una secuencia breve, con tono cuidado, para retomar conversaciones sin perseguir a nadie a mano.</p>
+        <p class="ex-result"><!-- TODO: agregar resultado real seguimiento --> Resultado: 00% más cierres.</p>
         <div class="glyph">c.</div>
+      </article>
+      <article class="example-card">
+        <div class="ex-tag">Salud · Turnos y ausencias</div>
+        <h4>Confirmación automática con recordatorios antes de cada turno.</h4>
+        <p><!-- TODO: completar caso real turnos --> Se conectó agenda, mensajes de confirmación y aviso al equipo cuando un turno quedaba liberado.</p>
+        <p class="ex-result"><!-- TODO: agregar resultado real turnos --> Resultado: 00% menos ausencias.</p>
+        <div class="glyph">d.</div>
       </article>
       <article class="example-card">
         <div class="ex-tag">Cobros</div>
         <h4>Recordatorios de pago amables, no pesados.</h4>
         <p>Antes y después del vencimiento, con el tono justo. Adjuntos y link de pago.</p>
-        <div class="glyph">d.</div>
-      </article>
-      <article class="example-card">
-        <div class="ex-tag">Agenda</div>
-        <h4>Turnos con confirmación automática.</h4>
-        <p>Reservás, te recuerdo, te confirmo. Menos huecos y menos llamadas perdidas.</p>
         <div class="glyph">e.</div>
       </article>
       <article class="example-card">
@@ -831,12 +1338,12 @@ footer .logo{font-size:18px}
 </section>
 
 <!-- ================== PARA QUIÉN ================== -->
-<section id="para-quien">
+<section id="para-quien" aria-labelledby="para-quien-title">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <div class="section-num">05 — Para quién</div>
-        <h2>Para negocios que <span class="italic">ya funcionan</span><br/>pero dependen de estar encima.</h2>
+        <h2 id="para-quien-title">Para negocios que <span class="italic">ya funcionan</span><br/>pero dependen de estar encima.</h2>
       </div>
       <p class="lede">
         Si tu negocio gira, pero cada día se va en apagar incendios
@@ -859,12 +1366,12 @@ footer .logo{font-size:18px}
 </section>
 
 <!-- ================== DIFERENCIAL ================== -->
-<section id="diferencial">
+<section id="diferencial" aria-labelledby="diferencial-title">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
         <div class="section-num">06 — Diferencial</div>
-        <h2>No vendo <span class="italic">magia</span>.<br/>Diseño sistemas<br/>que ahorran tiempo.</h2>
+        <h2 id="diferencial-title">No vendo <span class="italic">magia</span>.<br/>Diseño sistemas<br/>que ahorran tiempo.</h2>
       </div>
     </div>
 
@@ -886,18 +1393,169 @@ footer .logo{font-size:18px}
   </div>
 </section>
 
+<!-- ================== QUIÉN ESTÁ DETRÁS ================== -->
+<section id="quien-detras" aria-labelledby="quien-detras-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-num">07 — Quién está detrás</div>
+        <h2 id="quien-detras-title">La parte <span class="italic">humana</span><br/>del sistema.</h2>
+      </div>
+      <p class="lede">
+        Detrás de cada automatización hay alguien mirando el proceso completo,
+        no solo el flujo en una pantalla.
+      </p>
+    </div>
+
+    <div class="about-grid reveal">
+      <div class="about-photo">
+        <img src="assets/imagen.jpeg" alt="Foto de Matias Orset" loading="lazy" />
+      </div>
+      <div class="about-copy">
+        <div class="about-role">
+          <h3>Matias Orset · Automatización y operación</h3>
+          <p>Trabajo cruzando procesos, herramientas e IA para que negocios chicos puedan crecer sin quedar pegados a tareas repetidas.</p>
+        </div>
+        <p>Arranqué haciendo esto porque veía el mismo patrón seguido: equipos chicos resolviendo cosas importantes con demasiada carga manual.</p>
+        <p>Me interesa que cada implementación ahorre tiempo de verdad, sea entendible y no te deje atado a una caja negra rara.</p>
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/matias-orset-228417148/" target="_blank" rel="noopener">LinkedIn →</a>
+          <a href="https://github.com/phenrril" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== INVERSIÓN ================== -->
+<section id="inversion" aria-labelledby="inversion-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-num">08 — Inversión</div>
+        <h2 id="inversion-title">Tres maneras de empezar<br/>sin comprar <span class="italic">humo</span>.</h2>
+      </div>
+      <p class="lede">
+        No todos los negocios necesitan lo mismo. A veces alcanza con ordenar
+        un flujo puntual; otras veces conviene acompañar y ajustar sobre la marcha.
+      </p>
+    </div>
+
+    <div class="pricing-grid reveal-stagger">
+      <article class="pricing-card">
+        <div class="pricing-badge">Entrada</div>
+        <h3>Diagnóstico</h3>
+        <div class="pricing-price">Gratis</div>
+        <p>Primera reunión sin compromiso para detectar dónde se pierde tiempo y qué vale la pena automatizar primero.</p>
+        <ul class="pricing-list">
+          <li>Mapa inicial del proceso</li>
+          <li>Prioridad de oportunidades</li>
+          <li>Siguiente paso claro</li>
+        </ul>
+      </article>
+
+      <article class="pricing-card recommended">
+        <div class="pricing-badge">Recomendado</div>
+        <h3>Proyecto puntual</h3>
+        <div class="pricing-price">Desde monto a definir</div>
+        <!-- TODO: definir monto Proyecto puntual -->
+        <p>Implementación de una automatización específica de punta a punta, con prueba, ajuste y entrega lista para usar.</p>
+        <ul class="pricing-list">
+          <li>Diseño del flujo</li>
+          <li>Implementación e integración</li>
+          <li>Testing y ajuste inicial</li>
+        </ul>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-badge">Continuidad</div>
+        <h3>Acompañamiento mensual</h3>
+        <div class="pricing-price">Desde monto mensual a definir</div>
+        <!-- TODO: definir monto mensual acompañamiento -->
+        <p>Para negocios con varias automatizaciones que necesitan mantenimiento, mejoras y nuevas iteraciones todos los meses.</p>
+        <ul class="pricing-list">
+          <li>Soporte operativo</li>
+          <li>Nuevas mejoras pequeñas</li>
+          <li>Seguimiento continuo</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================== FAQ ================== -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-num">09 — FAQ</div>
+        <h2 id="faq-title">Preguntas que aparecen<br/>antes de ponerlo <span class="italic">en marcha</span>.</h2>
+      </div>
+      <p class="lede">
+        Lo normal: tiempos, cambios, herramientas, costos y cómo arrancar sin
+        tener todo perfecto desde el día uno.
+      </p>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary aria-expanded="false">
+          <span>¿Cuánto tarda una automatización en estar funcionando?</span>
+          <span class="faq-chevron" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">Depende del flujo, pero muchas veces lo primero útil queda andando en días, no en meses. La idea es salir rápido con algo que ya saque trabajo de encima.</div>
+      </details>
+      <details class="faq-item">
+        <summary aria-expanded="false">
+          <span>¿Qué pasa si después de implementarlo necesito cambios?</span>
+          <span class="faq-chevron" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">Se ajusta. Lo normal es iterar cuando el flujo entra en uso real. Prefiero dejar margen para corregir y mejorar antes que venderte algo rígido.</div>
+      </details>
+      <details class="faq-item">
+        <summary aria-expanded="false">
+          <span>¿Con qué herramientas se integra?</span>
+          <span class="faq-chevron" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">WhatsApp Business API, Mercado Pago, Google Sheets, Notion, Airtable, CRMs comunes, n8n y otras herramientas que ya uses. Se arma alrededor de tu operación, no al revés.</div>
+      </details>
+      <details class="faq-item">
+        <summary aria-expanded="false">
+          <span>¿Necesito tener algo armado antes de contratar?</span>
+          <span class="faq-chevron" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">No. Si tenés el proceso medio desordenado también sirve. Parte del trabajo es justamente ordenar lo mínimo necesario para automatizar sin inventar complejidad.</div>
+      </details>
+      <details class="faq-item">
+        <summary aria-expanded="false">
+          <span>¿Trabajás solo o tenés equipo?</span>
+          <span class="faq-chevron" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">El contacto y el diseño del flujo pasan por mí. Según el proyecto puedo apoyarme en colaboradores, pero la responsabilidad del resultado sigue siendo una sola.</div>
+      </details>
+      <details class="faq-item">
+        <summary aria-expanded="false">
+          <span>¿Hay costos mensuales más allá del proyecto?</span>
+          <span class="faq-chevron" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-answer">Puede haberlos si el flujo usa APIs, hosting, WhatsApp Business u otras herramientas pagas. Eso se aclara antes para que no aparezcan sorpresas raras después.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ================== CTA FINAL + FORM ================== -->
-<section id="contacto" class="cta">
+<section id="contacto" class="cta" aria-labelledby="contacto-title">
   <span class="scrim" aria-hidden="true"></span>
   <div class="wrap">
     <div class="cta-block reveal">
       <div class="cta-grid">
         <div class="cta-left">
-          <div class="section-num" style="margin-bottom:18px">07 — Hablemos</div>
-          <h2>Contame qué tarea querés dejar de hacer <span class="italic">a mano</span>.</h2>
+          <div class="section-num" style="margin-bottom:18px">10 — Hablemos</div>
+          <h2 id="contacto-title">Contame qué tarea querés dejar de hacer <span class="italic">a mano</span>.</h2>
           <p class="ctxt">
             Te hago un diagnóstico inicial sin cargo y vemos si tiene sentido
-            automatizarlo. Si no tiene sentido, te lo digo — preferimos
+            automatizarlo. Si no tiene sentido, te lo digo; preferimos
             ahorrarte plata, no clavártela.
           </p>
           <div class="cta-actions">
@@ -914,6 +1572,10 @@ footer .logo{font-size:18px}
         </div>
 
         <form class="form" id="form" novalidate>
+          <div class="hidden-field" aria-hidden="true">
+            <label for="f-website">Sitio web</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="form-row">
             <label class="form-label" for="f-name">Nombre</label>
             <input class="form-input" id="f-name" name="name" type="text" placeholder="Cómo te llamás" autocomplete="name" required />
@@ -932,19 +1594,33 @@ footer .logo{font-size:18px}
           <div class="form-row">
             <label class="form-label" for="f-task">¿Qué querés automatizar?</label>
             <textarea class="form-textarea" id="f-task" name="task" placeholder="Contame en una o dos frases qué tarea te está comiendo el tiempo." required></textarea>
-            <div class="form-error">Una frase alcanza — qué te gustaría dejar de hacer.</div>
+            <div class="form-error">Una frase alcanza; qué te gustaría dejar de hacer.</div>
           </div>
-          <button type="submit" class="form-submit">
-            Enviar consulta <span class="arrow">→</span>
+          <button type="submit" class="form-submit" id="form-submit">
+            <span class="form-submit-label">Enviar consulta</span>
+            <span class="arrow">→</span>
           </button>
-          <div class="form-success" id="form-success">
+          <div class="form-status form-success" id="form-success" aria-live="polite">
             Listo. Te respondo en menos de 24h hábiles por WhatsApp. Gracias por escribir.
+          </div>
+          <div class="form-status form-status-error" id="form-status-error" aria-live="polite">
+            No pude enviar la consulta ahora. Probá de nuevo en un rato o escribime por WhatsApp.
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+</main>
+
+<a href="https://wa.me/5493416620117" class="mobile-wa" id="mobile-wa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <span class="wa-icon" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.4z" fill="currentColor"/>
+      <path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.8 2.9 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.7.7-3.1-.2-.3c-.9-1.4-1.3-2.9-1.3-4.5 0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.6-8.1 8.6z" fill="currentColor"/>
+    </svg>
+  </span>
+</a>
 
 <!-- ================== FOOTER ================== -->
 <footer>
@@ -953,8 +1629,9 @@ footer .logo{font-size:18px}
     <div class="foot-links">
       <a href="#problema">El problema</a>
       <a href="#soluciones">Soluciones</a>
-      <a href="#proceso">Proceso</a>
       <a href="#ejemplos">Ejemplos</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
     </div>
     <div class="foot-meta">
@@ -968,75 +1645,169 @@ footer .logo{font-size:18px}
 </footer>
 
 <script>
-// ============ Nav scroll state ============
-const nav = document.getElementById('nav');
+const FORM_ENDPOINT = "TODO_PLACEHOLDER";
+// TODO: reemplazar FORM_ENDPOINT por Web3Forms, Formspree o un webhook propio (n8n, etc.)
+const WHATSAPP_URL = "https://wa.me/5493416620117";
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+const nav = document.getElementById("nav");
+const form = document.getElementById("form");
+const submitButton = document.getElementById("form-submit");
+const submitLabel = form.querySelector(".form-submit-label");
+const success = document.getElementById("form-success");
+const statusError = document.getElementById("form-status-error");
+const mobileWa = document.getElementById("mobile-wa");
+const contactSection = document.getElementById("contacto");
+
+const getScrollBehavior = () => prefersReducedMotion.matches ? "auto" : "smooth";
+
 const onScroll = () => {
-  if(window.scrollY > 30) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
+  if(window.scrollY > 30) nav.classList.add("scrolled");
+  else nav.classList.remove("scrolled");
+
+  if(window.innerWidth <= 760 && !contactSection.dataset.inView){
+    mobileWa.classList.toggle("visible", window.scrollY > 400);
+  }
 };
-window.addEventListener('scroll', onScroll, {passive:true});
+
+window.addEventListener("scroll", onScroll, {passive:true});
+window.addEventListener("resize", onScroll);
 onScroll();
 
-// ============ Reveal on scroll ============
-const io = new IntersectionObserver((entries) => {
-  for(const e of entries){
-    if(e.isIntersecting){
-      e.target.classList.add('in');
-      io.unobserve(e.target);
+const revealObserver = new IntersectionObserver((entries) => {
+  for(const entry of entries){
+    if(entry.isIntersecting){
+      entry.target.classList.add("in");
+      revealObserver.unobserve(entry.target);
     }
   }
-}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
-document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+}, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
 
-// ============ Form ============
-const form = document.getElementById('form');
-const success = document.getElementById('form-success');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  let ok = true;
-  form.querySelectorAll('.form-row').forEach(row => {
-    const input = row.querySelector('.form-input, .form-textarea');
-    if(!input) return;
-    if(!input.value.trim()){
-      row.classList.add('invalid');
-      ok = false;
+document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => revealObserver.observe(el));
+
+const contactObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.target !== contactSection) return;
+    if(entry.isIntersecting){
+      contactSection.dataset.inView = "true";
+      mobileWa.classList.remove("visible");
     } else {
-      row.classList.remove('invalid');
+      delete contactSection.dataset.inView;
+      onScroll();
     }
   });
+}, {threshold:0.2});
+
+contactObserver.observe(contactSection);
+
+document.querySelectorAll(".faq-item").forEach((details) => {
+  const summary = details.querySelector("summary");
+  const syncExpanded = () => summary.setAttribute("aria-expanded", String(details.open));
+  syncExpanded();
+  details.addEventListener("toggle", syncExpanded);
+});
+
+const hideFormMessages = () => {
+  success.classList.remove("show");
+  statusError.classList.remove("show");
+};
+
+const showSuccess = () => {
+  hideFormMessages();
+  success.classList.add("show");
+  const y = success.getBoundingClientRect().top + window.scrollY - 120;
+  window.scrollTo({top:Math.max(y, 0), behavior:getScrollBehavior()});
+};
+
+const showError = () => {
+  hideFormMessages();
+  statusError.classList.add("show");
+};
+
+const setSubmitState = (isLoading) => {
+  submitButton.disabled = isLoading;
+  submitLabel.textContent = isLoading ? "Enviando..." : "Enviar consulta";
+};
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  hideFormMessages();
+
+  let ok = true;
+  form.querySelectorAll(".form-row").forEach((row) => {
+    const input = row.querySelector(".form-input, .form-textarea");
+    if(!input) return;
+    if(!input.value.trim()){
+      row.classList.add("invalid");
+      ok = false;
+    } else {
+      row.classList.remove("invalid");
+    }
+  });
+
   if(!ok){
-    const firstInvalid = form.querySelector('.form-row.invalid input, .form-row.invalid textarea');
+    const firstInvalid = form.querySelector(".form-row.invalid input, .form-row.invalid textarea");
     if(firstInvalid) firstInvalid.focus();
     return;
   }
-  const name = document.getElementById('f-name').value.trim();
-  const biz  = document.getElementById('f-biz').value.trim();
-  const wa   = document.getElementById('f-wa').value.trim();
-  const task = document.getElementById('f-task').value.trim();
-  const msg  = `Hola Matias, te escribo desde orset.\n\nSoy *${name}* (${biz}).\nMi WhatsApp: ${wa}\n\n¿Qué quiero automatizar?\n${task}`;
-  window.open(`https://wa.me/5493416620117?text=${encodeURIComponent(msg)}`, '_blank');
-  form.querySelectorAll('input, textarea, button').forEach(el => el.setAttribute('disabled','true'));
-  success.classList.add('show');
-  const sy = success.getBoundingClientRect().top + window.scrollY - (window.innerHeight/2 - success.offsetHeight/2);
-  window.scrollTo({top: sy, behavior:'smooth'});
+
+  const honeypot = document.getElementById("f-website");
+  if(honeypot.value.trim()){
+    form.reset();
+    showSuccess();
+    return;
+  }
+
+  const data = {
+    name: document.getElementById("f-name").value.trim(),
+    biz: document.getElementById("f-biz").value.trim(),
+    wa: document.getElementById("f-wa").value.trim(),
+    task: document.getElementById("f-task").value.trim(),
+    source: "orset.ar"
+  };
+
+  try{
+    setSubmitState(true);
+    const response = await fetch(FORM_ENDPOINT, {
+      method:"POST",
+      body:JSON.stringify(data),
+      headers:{"Content-Type":"application/json"}
+    });
+
+    if(FORM_ENDPOINT === "TODO_PLACEHOLDER" || !response.ok){
+      throw new Error("form-submit-failed");
+    }
+
+    form.reset();
+    form.querySelectorAll(".form-row").forEach((row) => row.classList.remove("invalid"));
+    showSuccess();
+  } catch (error) {
+    console.error(error);
+    showError();
+  } finally {
+    setSubmitState(false);
+  }
 });
-form.querySelectorAll('.form-input, .form-textarea').forEach(input => {
-  input.addEventListener('input', () => {
-    const row = input.closest('.form-row');
-    if(row && input.value.trim()) row.classList.remove('invalid');
+
+form.querySelectorAll(".form-input, .form-textarea").forEach((input) => {
+  input.addEventListener("input", () => {
+    const row = input.closest(".form-row");
+    if(row && input.value.trim()) row.classList.remove("invalid");
+    if(success.classList.contains("show") || statusError.classList.contains("show")){
+      hideFormMessages();
+    }
   });
 });
 
-// ============ Smooth anchor offset for fixed nav ============
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const id = a.getAttribute('href').slice(1);
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (e) => {
+    const id = anchor.getAttribute("href").slice(1);
     if(!id) return;
     const target = document.getElementById(id);
     if(!target) return;
     e.preventDefault();
     const y = target.getBoundingClientRect().top + window.scrollY - 20;
-    window.scrollTo({top:y, behavior:'smooth'});
+    window.scrollTo({top:y, behavior:getScrollBehavior()});
   });
 });
 </script>

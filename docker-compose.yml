@@ -8,6 +8,8 @@ services:
     build: .
     container_name: orset_web
     restart: unless-stopped
+    ports:
+      - "80:80"
     networks:
       - edge_net
     volumes:
