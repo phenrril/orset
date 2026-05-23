@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:newmobile.com.ar)",
+      "WebFetch(domain:chroma3d.com.ar)",
+      "WebFetch(domain:argenoptik.com.ar)",
+      "WebFetch(domain:meli-publisher.net.ar)",
+      "Bash(gh repo *)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(mkdir -p \"C:/Users/matias/Documents/codigo/landing/orset/assets/projects\")",
+      "Bash(cp \"C:/Users/matias/.claude/image-cache/9538c043-7d17-4ba0-af2f-80699c742d3b/1.png\" \"C:/Users/matias/Documents/codigo/landing/orset/assets/projects/chroma3d.png\")",
+      "Bash(cp \"C:/Users/matias/.claude/image-cache/9538c043-7d17-4ba0-af2f-80699c742d3b/2.png\" \"C:/Users/matias/Documents/codigo/landing/orset/assets/projects/newmobile.png\")",
+      "Bash(cp \"C:/Users/matias/.claude/image-cache/9538c043-7d17-4ba0-af2f-80699c742d3b/3.png\" \"C:/Users/matias/Documents/codigo/landing/orset/assets/projects/argenoptik.png\")",
+      "Bash(cp \"C:/Users/matias/.claude/image-cache/9538c043-7d17-4ba0-af2f-80699c742d3b/4.png\" \"C:/Users/matias/Documents/codigo/landing/orset/assets/projects/meli-publisher.png\")"
+    ]
+  }
+}
