@@ -1,4 +1,4 @@
-FROM caddy:alpine
+FROM caddy:2.7
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY orset.html /usr/share/caddy/index.html
 COPY assets/ /usr/share/caddy/assets/
