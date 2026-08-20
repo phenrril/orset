@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="google-site-verification" content="L2-Y8NJWJlWh1yPLkfeo20jni39dwR550rfmPXgsgBc" />
 <title>orset. — Automatización para negocios reales</title>
 <meta name="description" content="Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios. WhatsApp, formularios, cobros, turnos y procesos en automático." />
 <meta property="og:type" content="website" />
@@ -20,11 +21,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YVRNKDGRLE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YVRNKDGRLE');
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "orset.",
+  "image": "https://orset.ar/assets/matias-orset-automatizacion.jpeg",
   "description": "Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios.",
   "url": "https://orset.ar",
   "telephone": "+5493416620117",
@@ -34,8 +44,70 @@
     "addressRegion": "Santa Fe",
     "addressCountry": "AR"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -32.9468,
+    "longitude": -60.6393
+  },
   "areaServed": ["AR", "LATAM"],
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "sameAs": ["https://www.linkedin.com/in/matias-orset-228417148/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda una automatización en estar funcionando?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del flujo, pero muchas veces lo primero útil queda andando en días, no en meses. La idea es salir rápido con algo que ya saque trabajo de encima."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si después de implementarlo necesito cambios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se ajusta. Lo normal es iterar cuando el flujo entra en uso real. Prefiero dejar margen para corregir y mejorar antes que venderte algo rígido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con qué herramientas se integra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp Business API, Mercado Pago, Google Sheets, Notion, Airtable, CRMs comunes, n8n y otras herramientas que ya uses. Se arma alrededor de tu operación, no al revés."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito tener algo armado antes de contratar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Si tenés el proceso medio desordenado también sirve. Parte del trabajo es justamente ordenar lo mínimo necesario para automatizar sin inventar complejidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajás solo o tenés equipo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El contacto y el diseño del flujo pasan por mí. Según el proyecto puedo apoyarme en colaboradores, pero la responsabilidad del resultado sigue siendo una sola."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay costos mensuales más allá del proyecto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede haberlos si el flujo usa APIs, hosting, WhatsApp Business u otras herramientas pagas. Eso se aclara antes para que no aparezcan sorpresas raras después."
+      }
+    }
+  ]
 }
 </script>
 <style>
@@ -1457,7 +1529,7 @@ footer .logo{font-size:18px}
 
     <div class="about-grid reveal">
       <div class="about-photo">
-        <img src="assets/imagen.jpeg" alt="Foto de Matias Orset" loading="lazy" />
+        <img src="assets/matias-orset-automatizacion.jpeg" alt="Foto de Matias Orset" loading="lazy" />
       </div>
       <div class="about-copy">
         <div class="about-role">
@@ -1610,6 +1682,7 @@ footer .logo{font-size:18px}
               Escribirme por WhatsApp <span class="arrow">→</span>
             </a>
             <a href="#form" class="btn btn-ghost btn-lg">Pedir cotización</a>
+            <button type="button" class="btn btn-ghost btn-lg" id="share-btn">Compartir</button>
           </div>
           <div class="cta-meta">
             <span>Respuesta &lt; 24h</span>
@@ -1844,6 +1917,26 @@ form.querySelectorAll(".form-input, .form-textarea").forEach((input) => {
       hideFormMessages();
     }
   });
+});
+
+const shareBtn = document.getElementById("share-btn");
+shareBtn.addEventListener("click", async () => {
+  const shareData = {
+    title: document.title,
+    text: "Automatizaciones simples y agentes inteligentes para PyMEs y negocios chicos.",
+    url: "https://orset.ar"
+  };
+  if(navigator.share){
+    try{ await navigator.share(shareData); } catch(e){ /* usuario canceló */ }
+  } else {
+    try{
+      await navigator.clipboard.writeText(shareData.url);
+      shareBtn.textContent = "¡Link copiado!";
+      setTimeout(() => { shareBtn.textContent = "Compartir"; }, 2000);
+    } catch(e){
+      window.open(shareData.url, "_blank");
+    }
+  }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

@@ -1,0 +1,31 @@
+# orset.
+
+> Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios en Argentina/LATAM. WhatsApp, formularios, cobros, turnos y procesos en automático.
+
+Contacto: WhatsApp +54 9 341 662 0117 · Rosario, Argentina · Remoto LATAM.
+
+## Servicios
+- Bots de WhatsApp e Instagram que responden consultas frecuentes
+- Formularios que cargan pedidos automáticamente en planillas/CRM
+- Seguimiento automático de clientes y presupuestos
+- Recordatorios de cobros, turnos y pagos
+- Agentes internos que consultan datos en lenguaje natural
+- Reportes simples de operación
+
+## Proceso
+1. Diagnóstico gratuito
+2. Diseño del flujo
+3. Implementación (WhatsApp, formularios, planillas, CRMs, Mercado Pago, email)
+4. Ajuste y mejora continua
+
+## Para quién
+Emprendimientos, comercios, profesionales independientes, servicios técnicos, tiendas online, PyMEs, estudios y consultorios.
+
+## Proyectos
+- argenoptik.com.ar — gestión integral para óptica mayorista
+- meli-publisher.net.ar — publicación automática a Mercado Libre
+- chroma3d.com.ar — e-commerce de impresión 3D
+- newmobile.com.ar — e-commerce de celulares
+
+## Páginas
+- [Sitio principal](https://orset.ar/)
