@@ -2,3 +2,5 @@
 caddy_data/
 caddy_config/
 docker-compose.yml
+api/node_modules/
+api/data/

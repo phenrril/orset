@@ -3,6 +3,10 @@
 root * /usr/share/caddy
 encode gzip
 
+reverse_proxy /api/* orset_api:3000
+
+rewrite /diagnostico /diagnostico.html
+
 header /index.html {
   Cache-Control "no-cache, must-revalidate"
 }
