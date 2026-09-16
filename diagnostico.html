@@ -12,6 +12,29 @@
 <meta property="og:title" content="Diagnóstico de madurez en IA y automatización — orset." />
 <meta property="og:description" content="Descubrí en 3 minutos qué tan automatizado está tu negocio y cuáles son tus 3 próximas prioridades." />
 <meta property="og:locale" content="es_AR" />
+<meta property="og:image" content="https://orset.ar/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Diagnóstico de madurez en IA y automatización — orset." />
+<meta name="twitter:description" content="Descubrí en 3 minutos qué tan automatizado está tu negocio y cuáles son tus 3 próximas prioridades." />
+<meta name="twitter:image" content="https://orset.ar/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Diagnóstico de madurez en IA y automatización",
+  "url": "https://orset.ar/diagnostico",
+  "isPartOf": { "@type": "WebSite", "url": "https://orset.ar/" },
+  "dateModified": "2026-09-16",
+  "inLanguage": "es-AR",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "orset.", "item": "https://orset.ar/" },
+      { "@type": "ListItem", "position": 2, "name": "Diagnóstico", "item": "https://orset.ar/diagnostico" }
+    ]
+  }
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E0F12'/%3E%3Ctext x='17' y='43' font-family='Inter,Arial,sans-serif' font-size='34' font-weight='700' fill='%23F4EDE2'%3Eo%3C/text%3E%3Ccircle cx='46' cy='44' r='4' fill='%23FF6842'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -136,6 +159,16 @@ h1{
 .result-actions{display:flex;flex-wrap:wrap;gap:12px}
 .result-note{font-size:13px;color:var(--mute);margin-top:18px}
 
+.summary{
+  border:1px solid var(--line);border-radius:16px;background:var(--bg-2);
+  padding:20px 22px;margin:0 0 32px;
+  display:grid;grid-template-columns:1fr;gap:12px;
+}
+@media(min-width:600px){.summary{grid-template-columns:1fr 1fr}}
+.summary div{display:flex;flex-direction:column;gap:3px}
+.summary dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.summary dd{margin:0;font-size:14px;color:var(--cream-dim)}
+
 .hidden{display:none !important}
 .error-msg{color:var(--coral);font-size:13px;margin-top:10px}
 
@@ -156,6 +189,15 @@ footer{border-top:1px solid var(--line);padding:24px var(--pad);text-align:cente
     10 preguntas sobre cómo trabajás hoy. Al final: tu nivel de madurez en IA y
     automatización, y tus 3 prioridades concretas para avanzar.
   </p>
+
+  <dl class="summary">
+    <div><dt>Qué es</dt><dd>Autodiagnóstico online de madurez en IA y automatización de procesos.</dd></div>
+    <div><dt>Para quién</dt><dd>Dueños/as y directivos/as de PyMEs, comercios y profesionales independientes.</dd></div>
+    <div><dt>Qué te da</dt><dd>Tu nivel (Manual → Aumentado con IA) y tus 3 prioridades concretas.</dd></div>
+    <div><dt>Cuánto tarda</dt><dd>3 minutos, 10 preguntas, resultado inmediato en pantalla.</dd></div>
+    <div><dt>Costo</dt><dd>Gratis, sin tarjeta ni registro previo.</dd></div>
+    <div><dt>Quién lo hace</dt><dd>orset., automatización para PyMEs — Rosario, Argentina.</dd></div>
+  </dl>
 
   <div id="progress-wrap" class="progress-wrap hidden">
     <div class="progress-bar" id="progress-bar"></div>

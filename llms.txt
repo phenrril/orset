@@ -13,7 +13,7 @@ Contacto: WhatsApp +54 9 341 662 0117 · Rosario, Argentina · Remoto LATAM.
 - Reportes simples de operación
 
 ## Proceso
-1. Diagnóstico gratuito
+1. Diagnóstico gratuito (autodiagnóstico online en 3 minutos: https://orset.ar/diagnostico)
 2. Diseño del flujo
 3. Implementación (WhatsApp, formularios, planillas, CRMs, Mercado Pago, email)
 4. Ajuste y mejora continua
@@ -29,3 +29,4 @@ Emprendimientos, comercios, profesionales independientes, servicios técnicos, t
 
 ## Páginas
 - [Sitio principal](https://orset.ar/)
+- [Diagnóstico de madurez en IA y automatización](https://orset.ar/diagnostico) — quiz gratuito de 3 minutos, devuelve nivel de madurez y 3 prioridades
