@@ -3,6 +3,7 @@ COPY Caddyfile /etc/caddy/Caddyfile
 COPY orset.html /usr/share/caddy/index.html
 COPY diagnostico.html /usr/share/caddy/diagnostico.html
 COPY assets/ /usr/share/caddy/assets/
+COPY assets/og-image.png /usr/share/caddy/og-image.png
 COPY robots.txt /usr/share/caddy/robots.txt
 COPY sitemap.xml /usr/share/caddy/sitemap.xml
 COPY llms.txt /usr/share/caddy/llms.txt
