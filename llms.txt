@@ -22,7 +22,7 @@ Contacto: WhatsApp +54 9 341 662 0117 · Rosario, Argentina · Remoto LATAM.
 Emprendimientos, comercios, profesionales independientes, servicios técnicos, tiendas online, PyMEs, estudios y consultorios.
 
 ## Proyectos
-- argenoptik.com.ar — gestión integral para óptica mayorista
+- tugestion.online — sistema de stock, ventas y caja multi-tenant para comercios
 - meli-publisher.net.ar — publicación automática a Mercado Libre
 - chroma3d.com.ar — e-commerce de impresión 3D
 - newmobile.com.ar — e-commerce de celulares
