@@ -33,6 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://orset.ar/#org",
   "name": "orset.",
   "image": "https://orset.ar/assets/matias-orset-automatizacion.jpeg",
   "description": "Automatizaciones simples y agentes inteligentes para PyMEs, emprendedores y pequeños negocios.",
@@ -51,7 +52,38 @@
   },
   "areaServed": ["AR", "LATAM"],
   "priceRange": "$$",
-  "sameAs": ["https://www.linkedin.com/in/matias-orset-228417148/"]
+  "sameAs": ["https://www.linkedin.com/in/matias-orset-228417148/"],
+  "founder": {
+    "@type": "Person",
+    "@id": "https://orset.ar/#matias-orset",
+    "name": "Matias Orset",
+    "jobTitle": "Automatización y operación",
+    "image": "https://orset.ar/assets/matias-orset-automatizacion.jpeg",
+    "sameAs": ["https://www.linkedin.com/in/matias-orset-228417148/"]
+  },
+  "knowsAbout": ["Automatización de procesos", "Agentes de IA", "WhatsApp e Instagram", "Sistemas de gestión", "Ecommerce", "Mercado Libre"],
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "WhatsApp e Instagram que responden consultas frecuentes", "description": "Atienden las primeras preguntas (precios, horarios, ubicación, stock), derivan a humano cuando hace falta y registran cada conversación."}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Formularios que cargan pedidos automáticamente", "description": "Del cliente a tu planilla, CRM o base de datos sin intermediarios."}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguimiento automático de clientes y presupuestos", "description": "Recordatorios después de cotizar, mensajes a quien no terminó de comprar, alertas internas para retomar conversaciones."}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Recordatorios de cobros, turnos y pagos", "description": "Avisos automáticos al cliente y al negocio: menos pagos atrasados, menos turnos vacíos."}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agentes que consultan datos y ayudan a operar", "description": "Asistentes internos que buscan información de clientes, productos o pedidos en lenguaje natural."}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reportes simples para entender qué pasa", "description": "Un panel sin tecnicismos: consultas que entraron, qué se vendió y qué quedó pendiente."}},
+    {"@type": "Offer", "name": "Diagnóstico", "price": "0", "priceCurrency": "ARS", "description": "Primera reunión sin compromiso para detectar dónde se pierde tiempo y qué vale la pena automatizar primero."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Sistemas en producción hechos por orset.",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "item": {"@type": "WebSite", "name": "tugestion.online", "url": "https://tugestion.online/", "description": "Sistema de stock, ventas y caja para comercios: app de escritorio conectada a una app web con reportes en tiempo real, factura electrónica y multi-sucursal.", "creator": {"@id": "https://orset.ar/#org"}}},
+    {"@type": "ListItem", "position": 2, "item": {"@type": "WebSite", "name": "meli-publisher.net.ar", "url": "https://meli-publisher.net.ar/", "description": "Publicación automática a Mercado Libre: toma stock y precios del sistema interno y publica catálogos con cálculo de margen.", "creator": {"@id": "https://orset.ar/#org"}}},
+    {"@type": "ListItem", "position": 3, "item": {"@type": "WebSite", "name": "chroma3d.com.ar", "url": "https://chroma3d.com.ar/", "description": "Estudio de impresión 3D, mayor y menor: tienda con catálogo, pedidos por WhatsApp y sección mayorista.", "creator": {"@id": "https://orset.ar/#org"}}},
+    {"@type": "ListItem", "position": 4, "item": {"@type": "WebSite", "name": "newmobile.com.ar", "url": "https://www.newmobile.com.ar/", "description": "Ecommerce de celulares con garantía: stock en vivo, cuotas, descuento por transferencia y envíos al país.", "creator": {"@id": "https://orset.ar/#org"}}}
+  ]
 }
 </script>
 <script type="application/ld+json">
